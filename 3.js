@@ -37,11 +37,13 @@ function Obtener()
 }
 function Des_ap()
 {
+    desplegar_apellidos();
     menu.style.display = "none";
     or_apellidos.style.display = "flex";
 }
 function Des_edad()
 {
+    desplegar_edad();
     menu.style.display = "none";
     or_edad.style.display = "flex";
 }
