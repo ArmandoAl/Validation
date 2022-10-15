@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empleados</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+            padding: 10px;
+            border-radius: 5px;
+            background-image: linear-gradient(to bottom right, #f35f51, #5334ed);
+            animation: fadein 1s;
+        }
+        .container > *{
+            margin: 5px;
+        }
+        input{
+            width: 20%;
+        }
+        .container_regis{
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+            padding: 10px;
+            border-radius: 5px;
+            background-image: linear-gradient(to bottom right, #f35f51, #34ed6e);
+        }
+        .container_regis > *{
+            margin: 5px;
+        }
+        .container_regis input{
+            width: 60%;
+        }
+
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        button{
+            background-color: #867db3;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu -->
+    <div class="container" id="menu">
+        <span>Elige una opcion</span>
+        <button onclick="Registrar()">Registrar empleados</button>
+        <button onclick="Obtener()">Obtener edad</button>
+        <button onclick="Des_ap()">Desplegar por apellido</button>
+        <button onclick="Des_edad()">Desplegar por edad</button>
+    </div>
+
+    <!-- Registro -->
+    <div class="container_regis" id="regis" style="display: none;">
+        <span>Registrar empleados</span>
+            <input id="id" type="text" placeholder="ID">
+            <input id="nombre" type="text" placeholder="Nombre">
+            <input id="apellido_p" type="text" placeholder="Ap. Pateno">
+            <input id="apellido_m" type="text" placeholder="Ap. Materno">
+            <input id="inputfecha" type="text" placeholder="Fecha de nacimiento">
+            <span id="text">---</span>
+            <button onclick="sendR()">Enviar</button>
+            <button onclick="backmenu()">Salir</button>
+    </div>
+
+    <!-- Obtener edad -->
+    <div class="container" style="display: none;" id="obtener">
+        <span>Obtener edad</span>
+        <div>
+        <span>Dame el id del empleado</span>
+        <input id="obinput" type="text" placeholder="Write">
+        <button onclick="sendOb()">Enviar</button>
+        </div>
+        <div>
+            <span>Edad: </span>
+            <span id="edad"></span>
+        </div>
+        <button onclick="backmenu()">Salir</button>
+    </div>
+    
+    <!-- Desplegar por apellido -->
+    <div class="container" style="display: none;" id="apellidos">
+        <span>Desplegar por apellido</span>
+        <ul id="listapellidos">
+
+        </ul>
+        <button onclick="backmenu()">Salir</button>
+    </div>
+
+    <!-- Desplegar por edad -->
+    <div class="container" style="display: none;" id="edadcolumn">
+        <span>Desplegar por edad</span>
+        <ul id="list">
+        </ul>
+        <button onclick="backmenu()">Salir</button>
+    </div>
+
+</body>
+<script type="text/javascript" src="2.js"></script>
+<script type="text/javascript" src="3.js"></script>
+</html>
